@@ -1,0 +1,7 @@
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Sum of Int Array\bin\Debug\Sum of Int Array.exe.config
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Sum of Int Array\bin\Debug\Sum of Int Array.exe
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Sum of Int Array\bin\Debug\Sum of Int Array.pdb
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Sum of Int Array\obj\Debug\Sum of Int Array.csproj.AssemblyReference.cache
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Sum of Int Array\obj\Debug\Sum of Int Array.csproj.CoreCompileInputs.cache
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Sum of Int Array\obj\Debug\Sum of Int Array.exe
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Sum of Int Array\obj\Debug\Sum of Int Array.pdb

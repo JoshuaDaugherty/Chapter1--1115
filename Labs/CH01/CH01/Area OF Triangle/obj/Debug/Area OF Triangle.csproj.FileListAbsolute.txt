@@ -1,0 +1,7 @@
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Area OF Triangle\bin\Debug\Area OF Triangle.exe.config
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Area OF Triangle\bin\Debug\Area OF Triangle.exe
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Area OF Triangle\bin\Debug\Area OF Triangle.pdb
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Area OF Triangle\obj\Debug\Area OF Triangle.csproj.AssemblyReference.cache
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Area OF Triangle\obj\Debug\Area OF Triangle.csproj.CoreCompileInputs.cache
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Area OF Triangle\obj\Debug\Area OF Triangle.exe
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Area OF Triangle\obj\Debug\Area OF Triangle.pdb

@@ -1,0 +1,7 @@
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Array of mutiples\bin\Debug\Array of mutiples.exe.config
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Array of mutiples\bin\Debug\Array of mutiples.exe
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Array of mutiples\bin\Debug\Array of mutiples.pdb
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Array of mutiples\obj\Debug\Array of mutiples.csproj.AssemblyReference.cache
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Array of mutiples\obj\Debug\Array of mutiples.csproj.CoreCompileInputs.cache
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Array of mutiples\obj\Debug\Array of mutiples.exe
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Array of mutiples\obj\Debug\Array of mutiples.pdb

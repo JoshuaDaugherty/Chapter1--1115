@@ -1,0 +1,7 @@
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Storing user data\bin\Debug\Storing user data.exe.config
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Storing user data\bin\Debug\Storing user data.exe
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Storing user data\bin\Debug\Storing user data.pdb
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Storing user data\obj\Debug\Storing user data.csproj.AssemblyReference.cache
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Storing user data\obj\Debug\Storing user data.csproj.CoreCompileInputs.cache
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Storing user data\obj\Debug\Storing user data.exe
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Storing user data\obj\Debug\Storing user data.pdb

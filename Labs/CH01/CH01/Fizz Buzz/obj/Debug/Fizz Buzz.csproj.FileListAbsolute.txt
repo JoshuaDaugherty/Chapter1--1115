@@ -1,0 +1,7 @@
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Fizz Buzz\bin\Debug\Fizz Buzz.exe.config
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Fizz Buzz\bin\Debug\Fizz Buzz.exe
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Fizz Buzz\bin\Debug\Fizz Buzz.pdb
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Fizz Buzz\obj\Debug\Fizz Buzz.csproj.AssemblyReference.cache
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Fizz Buzz\obj\Debug\Fizz Buzz.csproj.CoreCompileInputs.cache
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Fizz Buzz\obj\Debug\Fizz Buzz.exe
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\Fizz Buzz\obj\Debug\Fizz Buzz.pdb

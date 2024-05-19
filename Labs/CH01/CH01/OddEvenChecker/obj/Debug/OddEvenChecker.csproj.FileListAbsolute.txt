@@ -1,0 +1,7 @@
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\OddEvenChecker\bin\Debug\OddEvenChecker.exe.config
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\OddEvenChecker\bin\Debug\OddEvenChecker.exe
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\OddEvenChecker\bin\Debug\OddEvenChecker.pdb
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\OddEvenChecker\obj\Debug\OddEvenChecker.csproj.AssemblyReference.cache
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\OddEvenChecker\obj\Debug\OddEvenChecker.csproj.CoreCompileInputs.cache
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\OddEvenChecker\obj\Debug\OddEvenChecker.exe
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\Labs\CH01\CH01\OddEvenChecker\obj\Debug\OddEvenChecker.pdb
