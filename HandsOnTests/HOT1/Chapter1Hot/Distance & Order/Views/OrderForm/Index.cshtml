@@ -1,0 +1,61 @@
+﻿@model OrderForm
+@{
+	ViewBag.Title = "Order Form Page";
+}
+<<h1>Crazy Cranks t-Shirt Factory</h1>
+<h2>Order Form</h2>
+
+
+<form method="post" asp-action="Index">
+	<div class="col-md-3">
+		<label for="validationCustom05" class="form-label" asp-for="Quantity">Quantity</label>
+		<input asp-for="Quantity" class="form-control" type="text" id="validationCustom05" required />
+		<div class="col-auto">
+			<span id="passwordHelpInline" class="form-text text-danger">
+				Must be between a valid Quantity.
+			</span>
+		</div>
+
+		<div class="invalid-feedback">
+			Please provide a valid Quantity.
+		</div>
+	</div>
+
+	<div class="col-md-3">
+		<label class="form-label" asp-for="DiscountCode">Discount Code</label>
+		<input asp-for="DiscountCode" class="form-control" />
+
+		<div class="col-auto">
+			<span id="passwordHelpInline" class="form-text text-danger">
+				Must be between a valid Discount Code.
+			</span>
+		</div>
+	</div>
+
+
+	<div>
+		<button type="submit" class="btn btn-primary">Order</button>
+	</div>
+
+	<div class="form-group col-md-3">
+		<label for="exampleFormControlTextarea1">Subtotal</label>
+		<input asp-for="Subtotal" class="form-control border border-dark" readonly value="@Model.Subtotal" row="3" />
+
+	</div>
+
+	<div class="form-group col-md-3">
+		<label for="exampleFormControlTextarea1">Tax</label>
+		<input asp-for="Tax" class="form-control border border-dark" readonly value="@Model.Tax" row="3" />
+
+	</div>
+
+	<div class="form-group col-md-3">
+		<label  for="exampleFormControlTextarea1">Total</label>
+		<input asp-for="Total" type="number" class="form-control border border-dark" readonly value="@Model.Total" row="3" />
+
+	</div>
+
+
+
+
+</form>

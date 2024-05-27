@@ -1,0 +1,32 @@
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\bin\Debug\net8.0\appsettings.json
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\bin\Debug\net8.0\Distance & Order.staticwebassets.runtime.json
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\bin\Debug\net8.0\Distance & Order.exe
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\bin\Debug\net8.0\Distance & Order.deps.json
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\bin\Debug\net8.0\Distance & Order.runtimeconfig.json
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\bin\Debug\net8.0\Distance & Order.dll
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\bin\Debug\net8.0\Distance & Order.pdb
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\Distance & Order.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\Distance & Order.AssemblyInfoInputs.cache
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\Distance & Order.AssemblyInfo.cs
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\Distance & Order.csproj.CoreCompileInputs.cache
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\Distance & Order.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\Distance & Order.RazorAssemblyInfo.cache
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\Distance & Order.RazorAssemblyInfo.cs
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\Distance & Order.sourcelink.json
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\staticwebassets\msbuild.Distance & Order.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\staticwebassets\msbuild.build.Distance & Order.props
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Distance & Order.props
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Distance & Order.props
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\scopedcss\bundle\Distance & Order.styles.css
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\scopedcss\projectbundle\Distance & Order.bundle.scp.css
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\Distance & Order.dll
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\refint\Distance & Order.dll
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\Distance & Order.pdb
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\Distance & Order.genruntimeconfig.cache
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\obj\Debug\net8.0\ref\Distance & Order.dll
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\HandsOnTests\HOT1\Chapter1Hot\Distance & Order\bin\Debug\net8.0\libman.json

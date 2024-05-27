@@ -1,0 +1,28 @@
+﻿@model TipCalculatorModel
+@{
+	ViewBag.Title = "Tip Calculator";
+}
+<h1>Tip Calculator</h1>
+<form method="post" asp-action="Index">
+	<div>
+		<label class="form-label" asp-for="CostOfMeals">CostOfMeals</label>
+		<input asp-for="CostOfMeals" class="form-control" />
+	</div>
+	
+	<div>
+		<label class="form-label" asp-for="Percent15Tip">15% Tip:</label>
+		<input asp-for="Percent15Tip" class="form-control" readonly value="@Model.Percent15Tip" />
+	</div>
+	<div>
+		<label class="form-label" asp-for="Percent20Tip">20% Tip:</label>
+		<input asp-for="Percent20Tip" class="form-control" readonly value="@Model.Percent20Tip" />
+	</div>
+	<div>
+		<label class="form-label" asp-for="Percent25Tip">25% Tip:</label>
+		<input asp-for="Percent25Tip" class="form-control" readonly value="@Model.Percent25Tip" />
+	</div>
+
+	<div>
+		<button type="submit" class="btn btn-primary">Calculate</button>
+	</div>
+</form>

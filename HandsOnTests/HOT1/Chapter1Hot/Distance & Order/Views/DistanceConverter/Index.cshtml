@@ -1,0 +1,31 @@
+﻿@model DistanceConverter
+@{
+	ViewBag.Title = "Distance Converter Page";
+}
+<h1>Distance Converter</h1>
+
+<form method="post" asp-action="Index" class="row g-3 needs-validation" novalidate>
+	<div class="col-md-3">
+		<label for="validationCustom05" class="form-label" asp-for="DistanceInInches">Distance in Inches</label>
+		<input asp-for="DistanceInInches" type="text" class="form-control" id="validationCustom05" required />
+		<div class="col-auto">
+			<span id="passwordHelpInline" class="form-text text-danger">
+				Must be between 1-500.
+			</span>
+		</div>
+		
+		<div class="invalid-feedback">
+			Please provide a valid Distance 1-500.
+		</div>
+	</div>
+	<div>
+		<button type="submit" class="btn btn-primary">Convert to cm</button>
+	</div>
+
+	<div class="col-md-3">
+		<label for="validationCustom05" class="form-label" asp-for="DistanceInInches">Distance in Centinmeters</label>
+		<input asp-for="DistanceInCentimeters" class="form-control" readonly value="@Model.DistanceInCentimeters" row="3"/>
+	</div>
+	
+</form>
+
