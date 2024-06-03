@@ -1,0 +1,52 @@
+﻿@model ExerciseLog
+@{
+	ViewBag.Title = $"{ViewBag.Action}";
+}
+<h2>@ViewBag.Action</h2>
+
+<form asp-action="Edit" method="post">
+	<div asp-validation-summary="All" class="Text-danger">
+
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="Workout" class="form-label"></label>
+		<input asp-for="Workout" class="form-control" />
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="Activity" class="form-label"></label>
+		<input asp-for="Activity" class="form-control" />
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="Sets" class="form-label"></label>
+		<input asp-for="Sets" class="form-control" />
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="Reps" class="form-label"></label>
+		<input asp-for="Reps" class="form-control" />
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="Weight" class="form-label"></label>
+		<input asp-for="Weight" class="form-control" />
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="GenreId" class="form-label">Genre</label>
+		<select asp-for="GenreId" class="form-control"> 
+		<option value="">--Select Genre--</option>
+		@foreach (var genre in ViewBag.Genres)
+		{
+			<option value="@genre.GenreId">@genre.Name</option>
+		}
+		</select>
+	</div>
+
+	<input type="hidden" asp-for="ExerciseId" />
+	<button type="submit" class="btn btn-primary">Save</button>
+	<a asp-controller="History" asp-action="Index" class="btn btn-secondary">Cancel</a>
+
+</form>

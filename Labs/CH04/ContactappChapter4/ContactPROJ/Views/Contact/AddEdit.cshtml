@@ -1,0 +1,41 @@
+﻿@model ContactPROJ.Models.Contact
+@{
+	ViewBag.Title = ViewBag.Action;
+}
+
+<form asp-action="AddEdit" method="post">
+	<div asp-validation-summary="All"></div>
+	<div class="form-floating mb-3">
+		<input class="form-control" id="floatingFirstName" placeholder="First Name" asp-for="FirstName"> 
+		<label for="floatingFirstName" asp-for="FirstName">First Name</label>
+	</div>
+
+	<div class="form-floating mb-3">
+		<input class="form-control" id="floatingLastName" placeholder="Last Name" asp-for="LastName">
+		<label for="floatingLasttName" asp-for="LastName">Last Name</label>
+	</div>
+
+	<div class="form-floating mb-3">
+		<input class="form-control" id="floatingPhoneNumber" placeholder="Phone Number" asp-for="PhoneNumber">
+		<label for="floatingPhoneNumber" asp-for="PhoneNumber">Phone Number</label>
+	</div>
+
+	<div class="form-floating mb-3">
+		<input class="form-control" id="floatingEmail" placeholder="Email" asp-for="Email">
+		<label for="floatingEmail" asp-for="Email">Email</label>
+	</div>
+
+	<div>
+		<select asp-for="CategoryId" class="form-select">
+			@foreach (var category in ViewBag.Categories)
+			{
+				<option value="@category.CategoryId">@category.Name</option>
+			}
+		</select>
+	</div>
+	<input type="hidden" asp-for="ContactId" />
+	
+		<button type="submit" class="btn btn-primary">Save</button>
+	
+	
+</form>
