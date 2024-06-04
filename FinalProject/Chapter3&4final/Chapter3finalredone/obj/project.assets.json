@@ -4105,19 +4105,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\janic\\.nuget\\packages\\": {}
+    "C:\\Users\\evangudmestad\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\janic\\Downloads\\allcoursework-JoshuaDaugherty-master\\Labs\\CH04\\Chapter3&4final\\Chapter3finalredone\\Chapter3finalredone.csproj",
+      "projectUniqueName": "C:\\Users\\evangudmestad\\Desktop\\AWD 1115\\DaughertyChapter1--1115\\FinalProject\\Chapter3&4final\\Chapter3finalredone\\Chapter3finalredone.csproj",
       "projectName": "Chapter3finalredone",
-      "projectPath": "C:\\Users\\janic\\Downloads\\allcoursework-JoshuaDaugherty-master\\Labs\\CH04\\Chapter3&4final\\Chapter3finalredone\\Chapter3finalredone.csproj",
-      "packagesPath": "C:\\Users\\janic\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\janic\\Downloads\\allcoursework-JoshuaDaugherty-master\\Labs\\CH04\\Chapter3&4final\\Chapter3finalredone\\obj\\",
+      "projectPath": "C:\\Users\\evangudmestad\\Desktop\\AWD 1115\\DaughertyChapter1--1115\\FinalProject\\Chapter3&4final\\Chapter3finalredone\\Chapter3finalredone.csproj",
+      "packagesPath": "C:\\Users\\evangudmestad\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\evangudmestad\\Desktop\\AWD 1115\\DaughertyChapter1--1115\\FinalProject\\Chapter3&4final\\Chapter3finalredone\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\janic\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\evangudmestad\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4137,6 +4137,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -4173,7 +4178,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

@@ -69,7 +69,8 @@ namespace Chapter3finalredone.Controllers
 
 		public IActionResult Index()
 		{
-			return View();
-		}
+            var user = context.Users.OrderBy(m => m.UserName).ToList();
+            return View(user);
+        }
 	}
 }
