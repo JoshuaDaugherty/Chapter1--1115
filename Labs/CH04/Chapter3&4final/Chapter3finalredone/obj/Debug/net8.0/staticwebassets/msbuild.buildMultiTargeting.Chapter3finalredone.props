@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Chapter3finalredone.props" />
+</Project>

@@ -1,0 +1,14 @@
+﻿@model User
+@{
+	ViewBag.Title = "Delete User";
+}
+
+<h2 class="header__contents">Confirm Deletion</h2>
+<h3 class="header__contents">@Model.UserName</h3>
+
+<form asp-action="Delete" method="post">
+	
+	<input type="hidden" asp-for="UserId" />
+	<button type="submit" class="btn">Delete</button>
+	<a asp-controller="Users" asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
