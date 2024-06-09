@@ -1,0 +1,43 @@
+﻿@model Product
+@{
+	ViewBag.Title = $"{ViewBag.Action}";
+}
+
+<h1 class="header__contents">Add New Product</h1>
+<form asp-action="Edit" method="post" class="header__contents">
+	<div asp-validation-summary="All" class="text-warning"></div>
+	<div class="mb-3">
+		<label asp-for="ProductName" class="form-label"></label>
+		<input asp-for="ProductName" class="form-control" />
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="ProductDescShort" class="form-label"></label>
+		<input asp-for="ProductDescShort" class="form-control" />
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="ProductDescLong" class="form-label"></label>
+		<input asp-for="ProductDescLong" class="form-control" />
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="ProductImage" class="form-label"></label>
+		<input asp-for="ProductImage" class="form-control" />
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="ProductPrice" class="form-label"></label>
+		<input asp-for="ProductPrice" class="form-control" />
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="ProductQty" class="form-label"></label>
+		<input asp-for="ProductQty" class="form-control" />
+	</div>
+
+
+	<input type="hidden" asp-for="ProductID" />
+	<button type="submit" class="btn">Save</button>
+	<a asp-controller="product" asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
