@@ -25,7 +25,7 @@ namespace Chapter3finalredone.Controllers
 		{
 			context.Users.Remove(user);
 			context.SaveChanges();
-			return RedirectToAction("Index", "user");
+			return RedirectToAction("Index", "Users");
 		}
 
 
@@ -57,7 +57,7 @@ namespace Chapter3finalredone.Controllers
 					context.Users.Update(user);
 				}
 				context.SaveChanges();
-				return RedirectToAction("Index", "user");
+				return RedirectToAction("Index", "Users");
 				
 			}
 			else

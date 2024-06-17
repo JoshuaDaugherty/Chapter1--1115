@@ -1,0 +1,40 @@
+﻿@model List<User>
+@{
+    ViewBag.Title = "User page";
+}
+<a class="btn btn-primary" asp-controller="Users" asp-action="Edit">Add Contact</a>
+<table class="table">
+    <tr class="text-warning">
+        <th>
+            User Name
+        </th>
+
+        <th>
+            Email
+        </th>
+
+        <th>
+            Reason
+        </th>
+      <th></th>
+    </tr>
+    
+    @foreach (var user in Model)
+    {
+        <tr class="text-warning">
+            <td>@user.UserName</td>
+            <td>@user.Email</td>
+            <td>@user.Reason</td>
+
+           
+
+            <td>
+
+                <a asp-controller="Users" asp-action="Edit" asp-route-id="@user.UserId" asp-route-slug="@user.Slug">Edit</a>
+                <a asp-action="Delete" asp-controller="Users" asp-route-id="@user.UserId" asp-route-slug="@user.Slug">Delete</a>
+
+
+            </td>
+        </tr>
+    }
+</table>
