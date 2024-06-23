@@ -1,0 +1,25 @@
+﻿@model User
+@{
+	ViewBag.Title = "Admin Email Add/Edit";
+}
+<h1 class="header__contents">Add New User</h1>
+<form asp-action="Add" method="post" class="header__contents">
+	<div asp-validation-summary="All" class="text-warning"></div>
+	<div class="mb-3">
+		<label asp-for="UserName" class="form-label"></label>
+		<input asp-for="UserName" class="form-control" />
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="Email" class="form-label"></label>
+		<input asp-for="Email" class="form-control" />
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="Reason" class="form-label"></label>
+		<input asp-for="Reason" class="form-control" />
+	</div>
+	<input type="hidden" asp-for="UserId" />
+	<button type="submit" class="btn">Save</button>
+	<a asp-controller="Email" asp-action="List" asp-area="Admin" class="btn btn-secondary">Cancel</a>
+</form>

@@ -1,0 +1,10 @@
+﻿@model User
+@{
+	ViewBag.Title = "Delete Email";
+}
+
+<h1 class="text-white">Are you sure you want to delete? @Model.Slug</h1>
+<form asp-controller="Email" asp-action="DeleteEmail" asp-method="post">
+	<input type="hidden" asp-for="UserId" />
+	<input type="submit" value="Delete" class="btn" />
+</form>

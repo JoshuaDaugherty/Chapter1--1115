@@ -400,7 +400,6 @@ C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\FinalProject\Chapt
 C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\FinalProject\Chapter3&4final\Chapter3finalredone\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Chapter3finalredone.props
 C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\FinalProject\Chapter3&4final\Chapter3finalredone\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Chapter3finalredone.props
 C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\FinalProject\Chapter3&4final\Chapter3finalredone\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\FinalProject\Chapter3&4final\Chapter3finalredone\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\FinalProject\Chapter3&4final\Chapter3finalredone\obj\Debug\net8.0\scopedcss\bundle\Chapter3finalredone.styles.css
 C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\FinalProject\Chapter3&4final\Chapter3finalredone\obj\Debug\net8.0\scopedcss\projectbundle\Chapter3finalredone.bundle.scp.css
 C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\FinalProject\Chapter3&4final\Chapter3finalredone\obj\Debug\net8.0\Chapter3finalredone.csproj.CopyComplete
@@ -409,3 +408,4 @@ C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\FinalProject\Chapt
 C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\FinalProject\Chapter3&4final\Chapter3finalredone\obj\Debug\net8.0\Chapter3finalredone.pdb
 C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\FinalProject\Chapter3&4final\Chapter3finalredone\obj\Debug\net8.0\Chapter3finalredone.genruntimeconfig.cache
 C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\FinalProject\Chapter3&4final\Chapter3finalredone\obj\Debug\net8.0\ref\Chapter3finalredone.dll
+C:\Users\janic\Downloads\allcoursework-JoshuaDaugherty-master\FinalProject\Chapter3&4final\Chapter3finalredone\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
