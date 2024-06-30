@@ -1,0 +1,29 @@
+﻿@model TripViewModel
+@{
+
+}
+<div asp-validation-summary="All" class="text-danger" ></div>
+
+<form asp-action="Add" method="post">
+	<input type="hidden" asp-for="PageNumber"/>
+	<div class="mb-3">
+		<label asp-for="Trip.Destination" class="form-label">Destination</label>
+		<label asp-for="Trip.Destination" class="form-control"/>
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="Trip.Accomodation" class="form-label">Accomodation</label>
+		<label asp-for="Trip.Accomodation" class="form-label"/>
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="Trip.StartDate" class="form-label">Start Date</label>
+		<label asp-for="Trip.StartDate" class="form-control" />
+	</div>
+
+	<div class="mb-3">
+		<label asp-for="Trip.EndDate" class="form-label">End Date</label>
+		<label asp-for="Trip.EndDate" class="form-control" />
+	</div>
+	<button type="submit" class="btn btn-primary">Next</button>
+</form>

@@ -1,10 +1,13 @@
-﻿using Chapter3finalredone.Models;
+﻿using Azure.Identity;
+using Chapter3finalredone.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Chapter3finalredone.Controllers
 {
 	public class UsersController : Controller
 	{
+			
+
 		private UserContext context { get; set; }
 
 		public UsersController(UserContext ctx)
@@ -25,6 +28,7 @@ namespace Chapter3finalredone.Controllers
 		{
 			context.Users.Remove(user);
 			context.SaveChanges();
+			TempData["AlertMessage"] = "User Deleted Successfully";
 			return RedirectToAction("Index", "Users");
 		}
 
@@ -32,15 +36,17 @@ namespace Chapter3finalredone.Controllers
 		[HttpGet]
 		public IActionResult Add()
 		{
+			
 			ViewBag.Action = "Add";
 			return View("Edit", new User());
 		}
 		[HttpGet]
 		public IActionResult Edit(int id)
 		{
-			ViewBag.Action = "Edit User";
-			var user = context.Users.Find(id);
-			return View(user);
+            var user = context.Users.Find(id);
+            ViewBag.Action = "Edit";
+			
+			return View("Edit", user);
 		}
 
 		[HttpPost]
@@ -57,14 +63,13 @@ namespace Chapter3finalredone.Controllers
 					context.Users.Update(user);
 				}
 				context.SaveChanges();
-				return RedirectToAction("Index", "Users");
+                TempData["AlertMessage"] = "User Added/Updated Successfully";
+                return RedirectToAction("Index", "Users");
 				
 			}
-			else
-			{
-				ViewBag.Action = (user.UserId == 0) ? "Add" : "Edit";
+			
 				return View(user);
-			}
+			
 		}
 
 		public IActionResult Index()

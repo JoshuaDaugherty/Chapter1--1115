@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Trip>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<a asp-action="add" asp-controller="trip" asp-route-id="1" class="btn btn-primary">Add Trip</a>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Destination</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Accomodations</th>
+            <th>Activity 1</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var trip in Model)
+        {
+            <tr>
+                <td>@trip.Destination</td>
+                <td>@trip.StartDate?.ToShortDateString()</td>
+                <td>@trip.EndDate?.ToShortDateString()</td>
+                <td>@trip.Accomodation</td>
+                <td>@trip.Activity1</td>
+            </tr>
+        }
+    </tbody>
+</table>

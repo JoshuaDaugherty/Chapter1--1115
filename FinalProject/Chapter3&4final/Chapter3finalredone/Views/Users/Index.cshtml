@@ -2,6 +2,18 @@
 @{
     ViewBag.Title = "User page";
 }
+
+@if(TempData["AlertMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["AlertMessage"]
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+    </div>
+}
+
+
 <a class="btn btn-primary" asp-controller="Users" asp-action="Edit">Add Contact</a>
 <table class="table">
     <tr class="text-warning">
