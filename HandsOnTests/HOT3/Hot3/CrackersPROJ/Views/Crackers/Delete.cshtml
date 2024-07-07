@@ -1,0 +1,11 @@
+﻿@model CrackersPROJ.Models.Crackers
+@{
+	ViewBag.Title = "Delete";
+}
+<form asp-action="delete" method="post">
+	<input type="hidden" asp-for="CrackersId" />
+
+<h2>Are you sure you want to delete @Model.Name?</h2>
+
+<button type="submit" class="btn btn-danger">Delete</button>
+</form>

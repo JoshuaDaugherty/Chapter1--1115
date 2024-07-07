@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using Chapter3finalredone.Models;
+using Chapter3finalredone.Models.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Chapter3finalredone.Controllers
@@ -8,8 +9,10 @@ namespace Chapter3finalredone.Controllers
 	{
 		
 
+
 		public IActionResult Index()
 		{
+			
 			return View();
 		}
 

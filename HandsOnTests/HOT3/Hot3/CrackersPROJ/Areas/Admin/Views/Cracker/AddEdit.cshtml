@@ -1,0 +1,52 @@
+﻿@model CrackersPROJ.Models.Crackers
+@{
+    string action = "";
+    if(Model.CrackersId > 0)
+    {
+        action = "Edit";
+        ViewBag.Title = "Admin Crackers Edit";
+    }
+    else
+    {
+        action = "Add";
+        ViewBag.Title = "Admin Crackers Add";
+    }
+
+}
+
+@* @section scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+} *@
+
+<h1>Admin @(action) Cracker</h1>
+<div asp-validation-summary="All"></div>
+<form asp-controller="Cracker"  asp-action="Add" method="post">
+	<div asp-validation-summary="All"></div>
+	<div class="form-floating mb-3">
+		<input class="form-control" id="floatingName" placeholder=" Name" asp-for="Name">
+		<label for="floatingName" asp-for="Name"> Name</label>
+	</div>
+
+	<div class="form-floating mb-3">
+		<input class="form-control" id="floatingInvented" placeholder="Invented" asp-for="Invented">
+		<label for="floatingInvented" asp-for="Invented">Invented</label>
+	</div>
+
+	<div class="form-floating mb-3">
+		<input class="form-control" id="floatingPrice" placeholder="Price per box" asp-for="Price">
+		<label for="floatingPrice" asp-for="Price">Price per box</label>
+	</div>
+
+	<div class="form-floating mb-3">
+		<input class="form-control" id="floatingCalories" placeholder="Price per bundle" asp-for="Calories">
+		<label for="floatingCalories" asp-for="Calories">Price per bundle</label>
+	</div>
+
+
+	<input type="hidden" asp-for="CrackersId" />
+
+	<button type="submit" class="btn btn-primary">Save</button>
+
+
+</form>

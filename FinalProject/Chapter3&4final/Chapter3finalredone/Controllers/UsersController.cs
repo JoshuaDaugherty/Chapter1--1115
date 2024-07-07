@@ -1,33 +1,34 @@
 ﻿using Azure.Identity;
 using Chapter3finalredone.Models;
+using Chapter3finalredone.Models.ViewModel;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Chapter3finalredone.Controllers
 {
 	public class UsersController : Controller
 	{
-			
 
-		private UserContext context { get; set; }
+
+		private readonly UserContext _context;
 
 		public UsersController(UserContext ctx)
 		{
-			context = ctx;
+			_context = ctx;
 		}
 
 		[HttpGet]
 
 		public IActionResult Delete(int id)
 		{
-			var user = context.Users.Find(id);
+			var user = _context.Users.Find(id);
 				return View(user);
 		}
 
 		[HttpPost]
 		public IActionResult Delete(User user)
 		{
-			context.Users.Remove(user);
-			context.SaveChanges();
+			_context.Users.Remove(user);
+			_context.SaveChanges();
 			TempData["AlertMessage"] = "User Deleted Successfully";
 			return RedirectToAction("Index", "Users");
 		}
@@ -43,7 +44,7 @@ namespace Chapter3finalredone.Controllers
 		[HttpGet]
 		public IActionResult Edit(int id)
 		{
-            var user = context.Users.Find(id);
+            var user = _context.Users.Find(id);
             ViewBag.Action = "Edit";
 			
 			return View("Edit", user);
@@ -56,13 +57,13 @@ namespace Chapter3finalredone.Controllers
 			{
 				if(user.UserId == 0)
 				{
-					context.Users.Add(user);
+					_context.Users.Add(user);
 				}
 				else
 				{
-					context.Users.Update(user);
+					_context.Users.Update(user);
 				}
-				context.SaveChanges();
+				_context.SaveChanges();
                 TempData["AlertMessage"] = "User Added/Updated Successfully";
                 return RedirectToAction("Index", "Users");
 				
@@ -74,8 +75,49 @@ namespace Chapter3finalredone.Controllers
 
 		public IActionResult Index()
 		{
-            var user = context.Users.OrderBy(m => m.UserName).ToList();
+            var user = _context.Users.OrderBy(m => m.UserName).ToList();
             return View(user);
         }
+
+		public IActionResult ViewUserLogs()
+		{
+			var users = _context.Users.ToList();	
+			UserWorkoutLogsViewModel userWorkoutLogsViewModel = new UserWorkoutLogsViewModel();
+
+			foreach (var user in users)
+			{
+				userWorkoutLogsViewModel.users.Add(new Models.User
+				{
+					UserId = user.UserId,
+					UserName = user.UserName,
+					Email = user.Email,
+					Reason = user.Reason,
+				});
+			}
+
+
+			return View(userWorkoutLogsViewModel);
+		}
+
+		public IActionResult Details(int id)
+		{
+			var user = _context.Users.Find(id);
+			var workouts = _context.Workouts.Where(w => w.UserId == id).ToList();
+			UserWorkoutViewModel userWorkoutViewModel = new UserWorkoutViewModel
+			{
+				User = new Models.Users
+				{
+					UserId = user.UserId,
+					UserName = user.UserName,
+					Email = user.Email,
+					Reason = user.Reason,
+				}
+
+			};
+			userWorkoutViewModel.Workouts.AddRange(workouts);
+			return View(userWorkoutViewModel);
+		}
 	}
+
+
 }

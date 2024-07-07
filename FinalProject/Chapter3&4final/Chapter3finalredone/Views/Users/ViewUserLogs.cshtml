@@ -1,0 +1,13 @@
+﻿@model UserWorkoutLogsViewModel
+@{
+	ViewBag.Title = "User Logs";
+}
+<table class="table">
+@foreach (User user in Model.Users)
+{
+		<tr class="text-warning">
+	<td>@user.UserName @user.Email</td>
+	<a asp-action="Details" asp-route-id="@user.UserId">View Workouts</a>
+	</tr>
+}
+</table>

@@ -1,0 +1,59 @@
+﻿@model List<CrackersPROJ.Models.Crackers>
+@{
+    ViewData["Title"] = "Crackers List Page";
+}
+
+<a class="btn btn-primary" asp-controller="Crackers" asp-action="Add">Add Product</a>
+
+
+
+    <div class="col-md-10">
+        <table class="table table-info table-striped">
+            <tr>
+                <th>
+                    Name
+                </th>
+                <th>
+					Price per box
+                </th>
+                <th>
+                    Invented
+                </th>
+                <th>
+                   Price per Bundle
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+            <tr>
+                
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Invented)
+                    </td>
+                    <td>
+                        $@Html.DisplayFor(modelItem => item.Calories).00
+                    </td>
+                    <td>
+                        <a asp-controller="Crackers" asp-action="Edit" asp-route-id="@item.CrackersId" asp-route-slug="@item.Slug">Edit</a>
+                    </td>
+                    <td>
+                        <a asp-controller="Crackers" asp-action="Delete" asp-route-id="@item.CrackersId" asp-route-slug="@item.Slug">Delete</a>
+                    </td>
+                    <td>
+                    <a asp-controller="Crackers" asp-action="Details" asp-route-id="@item.CrackersId" asp-route-slug="@item.Slug">Details</a>
+                    </td>
+                <td>
+                    <a asp-controller="ShoppingCart" asp-action="AddToCart" asp-route-id="@item.CrackersId" asp-route-slug="@item.Slug" class="btn btn-primary">Add To Cart</a>
+                </td>
+                </tr>
+            }
+        </table>
+    </div>

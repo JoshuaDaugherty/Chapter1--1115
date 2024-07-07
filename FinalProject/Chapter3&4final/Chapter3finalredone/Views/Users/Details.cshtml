@@ -1,0 +1,18 @@
+﻿@model UserWorkoutViewModel
+@{
+	ViewData["Title"] = "Details";
+}
+
+<h2>@Model.User.UserName</h2>
+<h3>@Model.User.Email</h3>
+
+<table class="table">
+@foreach(var workout in Model.Workouts)
+{
+		<tr class="text-warning">
+	<td>@workout.CaloriesBurned</td>
+	<td>@workout.Date</td>
+	<td>@workout.Notes</td>
+	</tr>
+}
+</table>
