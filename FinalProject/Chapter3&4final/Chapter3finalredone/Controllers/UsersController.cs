@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 using Azure.Identity;
-using Chapter3finalredone.Data.Services;
+//using Chapter3finalredone.Data.Services;
 using Chapter3finalredone.Models;
 using Chapter3finalredone.Models.ViewModel;
 using Microsoft.AspNetCore.Hosting;
@@ -15,14 +15,14 @@ namespace Chapter3finalredone.Controllers
 {
 	public class UsersController : Controller
 	{
-		private readonly IUserService _UserService;
+		
 
 
 		private readonly UserContext _context;
 
-		public UsersController(IUserService UserService)
+		public UsersController(UserContext ctx)
 		{
-			_UserService = UserService;
+			_context = ctx;
 			
 		}
 
@@ -85,10 +85,10 @@ namespace Chapter3finalredone.Controllers
 
 		public async Task<IActionResult> Index(int? pageNumber)
 		{
-			var applicationDbContext = _UserService.GetAll();
+			//var applicationDbContext = _UserService.GetAll();
 			int pageSize = 3;
-			var user = _context.Users.OrderBy(m => m.UserName).ToList();
-            return View(await PaginatedList<User>.CreateAsync(applicationDbContext.Where(l => l.IsSold == false).AsNoTracking(), pageNumber ?? 1, pageSize));
+			var users = _context.Users.OrderBy(m => m.UserName).AsNoTracking();
+            return View(await PaginatedList<User>.CreateAsync(users, pageNumber ?? 1, pageSize));
         }
 
 		public IActionResult ViewUserLogs()
