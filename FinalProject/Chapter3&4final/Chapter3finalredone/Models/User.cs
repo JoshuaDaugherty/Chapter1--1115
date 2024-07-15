@@ -3,7 +3,9 @@ namespace Chapter3finalredone.Models
 {
     public class User
     {
-        public int UserId { get; set; }
+		internal bool IsSold;
+
+		public int UserId { get; set; }
         
         [Required(ErrorMessage = "Please enter a user name")]
         public string? UserName { get; set; }

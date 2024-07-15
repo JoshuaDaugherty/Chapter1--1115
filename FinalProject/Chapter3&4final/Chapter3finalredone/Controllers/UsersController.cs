@@ -1,19 +1,29 @@
-﻿using Azure.Identity;
+﻿using System.Reflection;
+using Azure.Identity;
+using Chapter3finalredone.Data.Services;
 using Chapter3finalredone.Models;
 using Chapter3finalredone.Models.ViewModel;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
 
 namespace Chapter3finalredone.Controllers
 {
 	public class UsersController : Controller
 	{
+		private readonly IUserService _UserService;
 
 
 		private readonly UserContext _context;
 
-		public UsersController(UserContext ctx)
+		public UsersController(IUserService UserService)
 		{
-			_context = ctx;
+			_UserService = UserService;
+			
 		}
 
 		[HttpGet]
@@ -73,10 +83,12 @@ namespace Chapter3finalredone.Controllers
 			
 		}
 
-		public IActionResult Index()
+		public async Task<IActionResult> Index(int? pageNumber)
 		{
-            var user = _context.Users.OrderBy(m => m.UserName).ToList();
-            return View(user);
+			var applicationDbContext = _UserService.GetAll();
+			int pageSize = 3;
+			var user = _context.Users.OrderBy(m => m.UserName).ToList();
+            return View(await PaginatedList<User>.CreateAsync(applicationDbContext.Where(l => l.IsSold == false).AsNoTracking(), pageNumber ?? 1, pageSize));
         }
 
 		public IActionResult ViewUserLogs()
@@ -105,7 +117,7 @@ namespace Chapter3finalredone.Controllers
 			var workouts = _context.Workouts.Where(w => w.UserId == id).ToList();
 			UserWorkoutViewModel userWorkoutViewModel = new UserWorkoutViewModel
 			{
-				User = new Models.Users
+				User = new User
 				{
 					UserId = user.UserId,
 					UserName = user.UserName,
