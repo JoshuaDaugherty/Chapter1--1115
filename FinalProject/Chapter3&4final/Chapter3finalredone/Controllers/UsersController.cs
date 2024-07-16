@@ -83,13 +83,21 @@ namespace Chapter3finalredone.Controllers
 			
 		}
 
-		public async Task<IActionResult> Index(int? pageNumber)
+		public async Task<IActionResult> Index(int? pageNumber, string searchString)
 		{
 			//var applicationDbContext = _UserService.GetAll();
 			int pageSize = 3;
 			var users = _context.Users.OrderBy(m => m.UserName).AsNoTracking();
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                users = users.Where(u => u.UserName.Contains(searchString));
+            }
+
             return View(await PaginatedList<User>.CreateAsync(users, pageNumber ?? 1, pageSize));
         }
+
+
 
 		public IActionResult ViewUserLogs()
 		{
