@@ -1,0 +1,38 @@
+﻿@model AppointmentListViewModel
+@{
+	ViewData["Title"] = "Appointments";
+}
+
+<form asp-action="Index" method="post">
+	<div class="row mb-3">
+		<label class="col-form-label col-md-2">Customer</label>
+		<div class="col-md-4">
+			<select name="CustomerId" class="form-select" asp-items="@(new SelectList(Model.customer,"CustomerId","UserName", Model.CustomerId))">
+				<option value="0">All</option>
+			</select>
+		</div>
+		<div class="col">
+			<button type="submit" class="btn btn-primary">Filter</button>
+		</div>
+	</div>
+</form>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Start Time</th>
+			<th>Customer</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach(Appointments appointments in Model.appointments)
+		{
+			<tr>
+				<td>@appointments.StartTime</td>
+				<td>@appointments.Customer.UserName</td>
+			</tr>
+		}
+	</tbody>
+
+	
+</table>
