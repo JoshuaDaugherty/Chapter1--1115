@@ -1,0 +1,46 @@
+﻿@model Appointment.Models.Appointments
+@{
+    string action = "";
+    if(Model.AppointmentsId > 0)
+    {
+        action = "Edit";
+        ViewBag.Title = "Admin Appointment Edit";
+    }
+    else
+    {
+        action = "Add";
+        ViewBag.Title = "Admin Appointment Add";
+    }
+
+}
+
+@* @section scripts{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+} *@
+
+<h1>Admin @(action) Appointment</h1>
+<div asp-validation-summary="All"></div>
+<form asp-controller="Appointment"  asp-action="Add" method="post">
+	<div asp-validation-summary="All"></div>
+	<div class="form-floating mb-3">
+		<input class="form-control" id="floatingStartTime" placeholder="StartTime" asp-for="StartTime">
+		<label for="floatingStartTime" asp-for="StartTime"> Start Time</label>
+	</div>
+
+	<div class="form-floating mb-3">
+		<input class="form-control" id="floatingCustomerId" placeholder="CustomerId" asp-for="CustomerId">
+		<label for="floatingCustomerId" asp-for="CustomerId">ICustomerId</label>
+	</div>
+
+	
+
+	
+
+
+	<input type="hidden" asp-for="AppointmentsId" />
+
+	<button type="submit" class="btn btn-primary">Save</button>
+
+
+</form>
