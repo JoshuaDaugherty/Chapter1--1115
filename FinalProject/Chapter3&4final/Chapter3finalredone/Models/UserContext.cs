@@ -7,11 +7,22 @@ namespace Chapter3finalredone.Models
         public DbSet<User> Users { get; set; } = null!;
 
         public DbSet<WorkoutLog> Workouts { get; set; }
+        //public DbSet<Exercise> exercise { get; set; }
+        //public DbSet<WorkoutLogExercise> WorkoutLogExercise { get; set; }
 
 		public UserContext(DbContextOptions<UserContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
+            // Many-to-Many: Product <-> Ingredient
+            //modelBuilder.Entity<WorkoutLogExercise>()
+            //	.HasKey(we => new {
+            //		we.WorkoutLogId,
+            //		we.ExerciseId
+            //	});
+
             modelBuilder.Entity<User>().HasData(
                 new User() { UserId = 1, UserName = "Joshua555", Email = "killerclutch@gmail.com", Reason = "Lose weight." },
                 new User() { UserId = 2, UserName = "Random616", Email = "Random616@gmail.com", Reason = "Gain weight." },
@@ -28,7 +39,15 @@ namespace Chapter3finalredone.Models
 
                 );
 
-        }
+			//modelBuilder.Entity<WorkoutLogExercise>().HasData(
+	  //          new WorkoutLogExercise { WorkoutLogId = 1, ExerciseId = 1 },
+	  //          new WorkoutLogExercise { WorkoutLogId = 2, ExerciseId = 4 },
+	  //          new WorkoutLogExercise { WorkoutLogId = 3, ExerciseId = 5 },
+	  //          new WorkoutLogExercise { WorkoutLogId = 4, ExerciseId = 6 },
+	  //          new WorkoutLogExercise { WorkoutLogId = 5, ExerciseId = 2 }
+
+				//);
+		}
 		
 	}
 }

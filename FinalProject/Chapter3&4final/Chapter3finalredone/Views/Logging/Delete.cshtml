@@ -1,0 +1,14 @@
+﻿@model ExcersizeLog
+@{
+	ViewBag.Title = "Delete Log";
+}
+
+<h2 class="header__contents">Confirm Deletion</h2>
+<h3 class="header__contents">@Model.ExcersizeLogName</h3>
+
+<form asp-action="Delete" method="post">
+
+	<input type="hidden" asp-for="ExcersizeLogId" />
+	<button type="submit" class="btn">Delete</button>
+	<a asp-controller="Logging" asp-action="AddWorkout" class="btn btn-secondary">Cancel</a>
+</form>

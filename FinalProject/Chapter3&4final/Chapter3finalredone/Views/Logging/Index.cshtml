@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ExcersizeLog>
+@{
+	ViewBag.Title = "Workout log";
+}
+
+<div class="text-center">
+	<h1>Workout logs</h1>
+	
+</div>
+
+<a asp-action="Add" asp-controller="Logging">Add Workout Log</a>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>Workout Log Name</th>
+			<th>Date</th>
+			<th>Notes</th>
+			<th></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		@foreach (ExcersizeLog e in Model)
+		{
+			<tr>
+				<td>@e.ExcersizeLogName</td>
+				<td>@e.Date</td>
+				<td>@e.Note</td>
+				<td>
+					<a asp-action="Edit" asp-controller="Logging" asp-route-id="@e.ExcersizeLogId" class="btn btn-outline-dark">Edit</a>
+					<a asp-action="Delete" asp-controller="Logging" asp-route-id="@e.ExcersizeLogId" class="btn btn-outline-dark">Delete</a>
+				</td>
+			</tr>
+		}
+
+	</tbody>
+</table>
