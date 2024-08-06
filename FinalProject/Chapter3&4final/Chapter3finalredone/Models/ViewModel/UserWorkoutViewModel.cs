@@ -1,6 +1,8 @@
-﻿namespace Chapter3finalredone.Models.ViewModel
+﻿using Chapter3finalredone.Models.DomainModels;
+
+namespace Chapter3finalredone.Models.ViewModel
 {
-	public class UserWorkoutViewModel //View Model for sending data to the details view
+    public class UserWorkoutViewModel //View Model for sending data to the details view
 	{
 		public User User { get; set; }
 

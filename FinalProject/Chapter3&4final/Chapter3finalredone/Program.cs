@@ -8,8 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 // Dependency Injection
-builder.Services.AddDbContext<UserContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("UserContext")));
+
 
 builder.Services.AddDbContext<LoggingContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("LoggingCS")));

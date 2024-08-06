@@ -1,4 +1,5 @@
-﻿using Chapter3finalredone.Models;
+﻿using Chapter3finalredone.Models.DataLayer;
+using Chapter3finalredone.Models.DomainModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Chapter3finalredone.Areas.Admin.Controllers
@@ -7,9 +8,9 @@ namespace Chapter3finalredone.Areas.Admin.Controllers
     [Area("Admin")]
     public class EmailController : Controller
     {
-        private readonly UserContext _context;
+        private readonly LoggingContext _context;
 
-        public EmailController(UserContext ctx)
+        public EmailController(LoggingContext ctx)
         {
             _context = ctx;
         }

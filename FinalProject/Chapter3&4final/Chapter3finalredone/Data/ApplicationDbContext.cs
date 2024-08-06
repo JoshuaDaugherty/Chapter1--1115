@@ -1,8 +1,8 @@
-﻿using Chapter3finalredone.Models;
+﻿using Chapter3finalredone.Models.DomainModels;
 using Microsoft.EntityFrameworkCore;
 namespace Chapter3finalredone.Data
 {
-	public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : DbContext
 	{
 		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
 					: base(options)

@@ -6,80 +6,80 @@ namespace Chapter3finalredone.Controllers
 {
 	public class LoggingController : Controller
 	{
-		private Repository<ExcersizeLog> ExcersizeLog { get; set; }
-		private Repository<Date> dates { get; set; }
+		private Repository<WorkoutLog> WorkoutLogs { get; set; }
+		private Repository<Exercise> exercises { get; set; }
 
 		public LoggingController(LoggingContext context)
 		{
-			ExcersizeLog = new Repository<ExcersizeLog>(context);
-			dates = new Repository<Date>(context);
+			WorkoutLogs = new Repository<WorkoutLog>(context);
+			exercises = new Repository<Exercise>(context);
 		}
 
 		public IActionResult Index(int id)
 		{
-			var dateOptions = new QueryOptions<Date>
+			var dateOptions = new QueryOptions<Exercise>
 			{
-				OrderBy = d => d.DateId
+				OrderBy = d => d.ExerciseId
 			};
-			var ExcersizeLogOptions = new QueryOptions<ExcersizeLog>
+			var WorkoutLogOptions = new QueryOptions<WorkoutLog>
 			{
 				Includes = "Date,Note"
 			};
 
 			if (id == 0)
 			{
-				ExcersizeLogOptions.OrderBy = c => c.DateId;
-				ExcersizeLogOptions.ThenOrderBy = c => c.MilitaryTime;
+				WorkoutLogOptions.OrderBy = c => c.WorkoutLogId;
+				WorkoutLogOptions.ThenOrderBy = c => c.Date;
 
 			}
 			else
 			{
-				ExcersizeLogOptions.Where = c => c.DateId == id;
-				ExcersizeLogOptions.OrderBy = c => c.MilitaryTime;
+				WorkoutLogOptions.Where = c => c.WorkoutLogId == id;
+				WorkoutLogOptions.OrderBy = c => c.Date;
 			}
 
-			var DateList = dates.List(dateOptions);
-			var ExcersizeLogList = ExcersizeLog.List(ExcersizeLogOptions);
+			var DateList = exercises.List(dateOptions);
+			var WorkoutLogList = WorkoutLogs.List(WorkoutLogOptions);
 
 			ViewBag.Id = id;
 			ViewBag.Date = DateList;
 
-			return View(ExcersizeLogList);
+			return View(WorkoutLogList);
 		}
 
 		[HttpGet]
 		public ViewResult Add() => View();
 
 		[HttpPost]
-		public IActionResult Add(ExcersizeLog e)
+		public IActionResult Add(WorkoutLog e)
 		{
-			bool isAdd = e.ExcersizeLogId == 0;
+			bool isAdd = e.WorkoutLogId == 0;
 
 			if (ModelState.IsValid)
 			{
 				if (isAdd)
-					ExcersizeLog.Insert(e);
+					WorkoutLogs.Insert(e);
 				else
-					ExcersizeLog.Update(e);
-				ExcersizeLog.Save();
+					WorkoutLogs.Update(e);
+				WorkoutLogs.Save();
 				return RedirectToAction("Index", "Home");
 			}
 			else
 			{
 				string operation = (isAdd) ? "Add" : "Edit";
 				this.LoadViewBag(operation);
-				return View("AddeEdit", e);
+				return View("AddEdit", e);
 			}
 		}
 
 		[HttpGet]
-		public ViewResult Delete(int id) => View(ExcersizeLog.Get(id));
+		public ViewResult Delete(int id) => View(WorkoutLogs.Get(id));
 
 		[HttpPost]
-		public RedirectToActionResult Delete(ExcersizeLog excersizeLog)
+		public RedirectToActionResult Delete(WorkoutLog WorkoutLog)
 		{
-			ExcersizeLog.Delete(excersizeLog);
-			ExcersizeLog.Save();
+			WorkoutLogs.Delete(WorkoutLog);
+			WorkoutLogs.Save();
 			return RedirectToAction("AddWorkout");
 		}
 
@@ -91,21 +91,21 @@ namespace Chapter3finalredone.Controllers
 			return View("AddEdit");
 		}
 
-		private ExcersizeLog GetExcersizeLog(int id)
+		private WorkoutLog GetExcersizeLog(int id)
 		{
-			var ExcersizeLogOptions = new QueryOptions<ExcersizeLog>
+			var WorkoutLogOptions = new QueryOptions<WorkoutLog>
 			{
-				Includes = "Note, ExcersizeLogName",
-				Where  = c => c.ExcersizeLogId ==id
+				Includes = "Note, Date",
+				Where  = c => c.WorkoutLogId ==id
 			};
-			return ExcersizeLog.Get(ExcersizeLogOptions) ?? new ExcersizeLog();
+			return WorkoutLogs.Get(WorkoutLogOptions) ?? new WorkoutLog();
 		}
 
 		private void LoadViewBag(string operation)
 		{
-			ViewBag.Dates = dates.List(new QueryOptions<Date>
+			ViewBag.Dates = exercises.List(new QueryOptions<WorkoutLog>
 			{
-				OrderBy = d => d.DateId
+				OrderBy = d => d.Date
 			});
 			//ViewBag.Note = notes.List(new QueryOptions<Note>
 			//{

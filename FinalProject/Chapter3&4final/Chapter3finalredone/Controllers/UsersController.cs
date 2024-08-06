@@ -1,7 +1,6 @@
 ﻿using System.Reflection;
 using Azure.Identity;
 //using Chapter3finalredone.Data.Services;
-using Chapter3finalredone.Models;
 using Chapter3finalredone.Models.ViewModel;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -10,17 +9,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
+using Chapter3finalredone.Models.DomainModels;
+using Chapter3finalredone.Models.DataLayer;
 
 namespace Chapter3finalredone.Controllers
 {
-	public class UsersController : Controller
+    public class UsersController : Controller
 	{
 		
 
 
-		private readonly UserContext _context;
+		private readonly LoggingContext _context;
 
-		public UsersController(UserContext ctx)
+		public UsersController(LoggingContext ctx)
 		{
 			_context = ctx;
 			
