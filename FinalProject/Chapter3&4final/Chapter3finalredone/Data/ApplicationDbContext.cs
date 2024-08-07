@@ -2,14 +2,13 @@
 using Microsoft.EntityFrameworkCore;
 namespace Chapter3finalredone.Data
 {
-    public class ApplicationDbContext : DbContext
-	{
-		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-					: base(options)
-		{
-		}
+	//public class ApplicationDbContext : IdentityDbContext<AppilcationUser>
+	//{
+	//	public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+	//				: base(options)
+	//	{
+	//	}
 
-		public DbSet<WorkoutLog> WorkoutLogs { get; set; }
-		public DbSet<User> Users { get; set; }
-	}
+
+	//}
 }

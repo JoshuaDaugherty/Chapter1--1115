@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ExcersizeLog>
+﻿@model IEnumerable<WorkoutLog>
 @{
 	ViewBag.Title = "Workout log";
 }
@@ -21,15 +21,14 @@
 	</thead>
 
 	<tbody>
-		@foreach (ExcersizeLog e in Model)
+		@foreach (WorkoutLog e in Model)
 		{
 			<tr>
-				<td>@e.ExcersizeLogName</td>
 				<td>@e.Date</td>
-				<td>@e.Note</td>
+				<td>@e.Notes</td>
 				<td>
-					<a asp-action="Edit" asp-controller="Logging" asp-route-id="@e.ExcersizeLogId" class="btn btn-outline-dark">Edit</a>
-					<a asp-action="Delete" asp-controller="Logging" asp-route-id="@e.ExcersizeLogId" class="btn btn-outline-dark">Delete</a>
+					<a asp-action="Edit" asp-controller="Logging" asp-route-id="@e.WorkoutLogId" class="btn btn-outline-dark">Edit</a>
+					<a asp-action="Delete" asp-controller="Logging" asp-route-id="@e.WorkoutLogId" class="btn btn-outline-dark">Delete</a>
 				</td>
 			</tr>
 		}

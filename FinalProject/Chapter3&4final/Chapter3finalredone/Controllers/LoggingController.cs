@@ -103,10 +103,10 @@ namespace Chapter3finalredone.Controllers
 
 		private void LoadViewBag(string operation)
 		{
-			ViewBag.Dates = exercises.List(new QueryOptions<WorkoutLog>
-			{
-				OrderBy = d => d.Date
-			});
+			//ViewBag.Dates = exercises.List(new QueryOptions<WorkoutLog>
+			//{
+			//	OrderBy = d => d.Date
+			//});
 			//ViewBag.Note = notes.List(new QueryOptions<Note>
 			//{
 			//	OrderBy = d => d.NotesAfterWorkout

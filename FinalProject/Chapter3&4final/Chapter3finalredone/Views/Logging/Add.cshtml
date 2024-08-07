@@ -1,4 +1,4 @@
-﻿@model ExcersizeLog
+﻿@model WorkoutLog
 @{
 	ViewBag.Title = "Add Teacher";
 }
@@ -9,19 +9,16 @@
 	<div asp-validation-summary="All" class="text-danger"></div>
 
 	<div class="mb-3">
-		<label asp-for="ExcersizeLogName" class="form-label"></label>
-		<input asp-for="ExcersizeLogName" class="form-control" />
-	</div>
-
-	<div class="mb-3">
-		<label asp-for="Note" class="form-label"></label>
-		<input asp-for="Note" class="form-control" />
-	</div>
-
-	<div class="mb-3">
 		<label asp-for="Date" class="form-label"></label>
 		<input asp-for="Date" class="form-control" />
 	</div>
+
+	<div class="mb-3">
+		<label asp-for="Notes" class="form-label"></label>
+		<input asp-for="Notes" class="form-control" />
+	</div>
+
+	
 
 	<button type="submit" class="btn btn-dark">Save</button>
 	<a asp-action="Index" asp-controller="AddWorkout" class="btn btn-outline-dark">Cancel</a>

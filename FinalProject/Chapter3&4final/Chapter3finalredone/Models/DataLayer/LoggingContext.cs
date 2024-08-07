@@ -3,7 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Chapter3finalredone.Models.DataLayer
 {
-	public class LoggingContext : DbContext
+    //IdentityDbContext<ApplicationUser>
+
+    public class LoggingContext : DbContext
 	{
 		public LoggingContext(DbContextOptions<LoggingContext> options) 
 			:base(options)
@@ -17,7 +19,7 @@ namespace Chapter3finalredone.Models.DataLayer
 
 		public DbSet<Exercise> Exercises { get; set; }
 
-		public DbSet<WorkoutLogExercize> workoutLogExercizes { get; set; }
+		public DbSet<WorkoutLogExercise> workoutLogExercises { get; set; }
 
 		
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -26,17 +28,17 @@ namespace Chapter3finalredone.Models.DataLayer
 			//Define composite key and relationships for WorkoutLogExercise
 			base.OnModelCreating(modelBuilder);
 
-			modelBuilder.Entity<WorkoutLogExercize>()
+			modelBuilder.Entity<WorkoutLogExercise>()
 				.HasKey(we => new { we.WorkoutLogId, we.ExerciseId });
 
-			modelBuilder.Entity<WorkoutLogExercize>()
+			modelBuilder.Entity<WorkoutLogExercise>()
 				.HasOne(we => we.WorkoutLog)
-				.WithMany(w => w.WorkoutLogExercizes)
+				.WithMany(w => w.WorkoutLogExercises)
 				.HasForeignKey(we => we.WorkoutLogId);
 
-			modelBuilder.Entity<WorkoutLogExercize>()
-				.HasOne(we => we.exercise)
-				.WithMany(e => e.WorkoutLogExercizes)
+			modelBuilder.Entity<WorkoutLogExercise>()
+				.HasOne(we => we.Exercise)
+				.WithMany(e => e.WorkoutLogExercises)
 				.HasForeignKey(we => we.ExerciseId);
 
 
@@ -71,15 +73,15 @@ namespace Chapter3finalredone.Models.DataLayer
 				);
 
 
-			modelBuilder.Entity<WorkoutLogExercize>().HasData(
-				new WorkoutLogExercize { WorkoutLogId = 1, ExerciseId = 3},
-				new WorkoutLogExercize { WorkoutLogId = 1, ExerciseId = 2},
-				new WorkoutLogExercize { WorkoutLogId = 2, ExerciseId = 1},
-				new WorkoutLogExercize { WorkoutLogId = 2, ExerciseId = 4},
-				new WorkoutLogExercize { WorkoutLogId = 3, ExerciseId = 2},
-				new WorkoutLogExercize { WorkoutLogId = 3, ExerciseId = 4},
-				new WorkoutLogExercize { WorkoutLogId = 4, ExerciseId = 3},
-				new WorkoutLogExercize { WorkoutLogId = 4, ExerciseId = 1}
+			modelBuilder.Entity<WorkoutLogExercise>().HasData(
+				new WorkoutLogExercise { WorkoutLogId = 1, ExerciseId = 3},
+				new WorkoutLogExercise { WorkoutLogId = 1, ExerciseId = 2},
+				new WorkoutLogExercise { WorkoutLogId = 2, ExerciseId = 1},
+				new WorkoutLogExercise { WorkoutLogId = 2, ExerciseId = 4},
+				new WorkoutLogExercise { WorkoutLogId = 3, ExerciseId = 2},
+				new WorkoutLogExercise { WorkoutLogId = 3, ExerciseId = 4},
+				new WorkoutLogExercise { WorkoutLogId = 4, ExerciseId = 3},
+				new WorkoutLogExercise { WorkoutLogId = 4, ExerciseId = 1}
 				);
 
 

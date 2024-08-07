@@ -16,6 +16,6 @@ namespace Chapter3finalredone.Models.DomainModels
 
         public ICollection<User> Users { get; set; }//A user can have many workout logs
 
-        public ICollection<WorkoutLogExercize> WorkoutLogExercizes { get; set; } //A workout log can have many exercises
+        public ICollection<WorkoutLogExercise> WorkoutLogExercises { get; set; } //A workout log can have many exercises
     }
 }

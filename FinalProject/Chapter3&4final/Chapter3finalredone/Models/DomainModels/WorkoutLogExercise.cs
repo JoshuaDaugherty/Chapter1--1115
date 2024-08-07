@@ -1,6 +1,6 @@
 ﻿namespace Chapter3finalredone.Models.DomainModels
 {
-	public class WorkoutLogExercize
+	public class WorkoutLogExercise
 	{
 		public int WorkoutLogId { get; set; } //fk
 
@@ -8,6 +8,6 @@
 
 		public int ExerciseId { get; set; } //fk
 
-		public Exercise exercise { get; set; }  //nav prop
+		public Exercise Exercise { get; set; }  //nav prop
 	}
 }

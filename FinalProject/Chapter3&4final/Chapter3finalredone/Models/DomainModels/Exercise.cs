@@ -8,6 +8,6 @@
 
 		public string Description { get; set; } = string.Empty;
 
-		public ICollection<WorkoutLogExercize> WorkoutLogExercizes { get; set; }
+		public ICollection<WorkoutLogExercise> WorkoutLogExercises { get; set; }
 	}
 }

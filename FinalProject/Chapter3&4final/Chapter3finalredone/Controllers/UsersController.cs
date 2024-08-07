@@ -100,25 +100,25 @@ namespace Chapter3finalredone.Controllers
 
 
 
-		public IActionResult ViewUserLogs()
-		{
-			var users = _context.Users.ToList();	
-			UserWorkoutLogsViewModel userWorkoutLogsViewModel = new UserWorkoutLogsViewModel();
+		//public IActionResult ViewUserLogs()
+		//{
+		//	var users = _context.Users.ToList();	
+		//	UserWorkoutLogsViewModel userWorkoutLogsViewModel = new UserWorkoutLogsViewModel();
 
-			foreach (var user in users)
-			{
-				userWorkoutLogsViewModel.users.Add(new Models.User
-				{
-					UserId = user.UserId,
-					UserName = user.UserName,
-					Email = user.Email,
-					Reason = user.Reason,
-				});
-			}
+		//	foreach (var user in users)
+		//	{
+		//		userWorkoutLogsViewModel.users.Add(new Models.User
+		//		{
+		//			UserId = user.UserId,
+		//			UserName = user.UserName,
+		//			Email = user.Email,
+		//			Reason = user.Reason,
+		//		});
+		//	}
 
 
-			return View(userWorkoutLogsViewModel);
-		}
+		//	return View(userWorkoutLogsViewModel);
+		//}
 
 		public IActionResult Details(int id)
 		{
