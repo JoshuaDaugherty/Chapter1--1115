@@ -1,4 +1,5 @@
 ﻿using Chapter3finalredone.Models.DomainModels;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 namespace Chapter3finalredone.Data
 {

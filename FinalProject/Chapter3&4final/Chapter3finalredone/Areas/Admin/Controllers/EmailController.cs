@@ -1,10 +1,11 @@
 ﻿using Chapter3finalredone.Models.DataLayer;
 using Chapter3finalredone.Models.DomainModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Chapter3finalredone.Areas.Admin.Controllers
 {
-
+    [Authorize]
     [Area("Admin")]
     public class EmailController : Controller
     {

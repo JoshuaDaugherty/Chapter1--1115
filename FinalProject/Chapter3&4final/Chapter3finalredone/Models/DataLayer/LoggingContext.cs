@@ -1,12 +1,15 @@
 ﻿using Chapter3finalredone.Models.DomainModels;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace Chapter3finalredone.Models.DataLayer
 {
     //IdentityDbContext<ApplicationUser>
 
-    public class LoggingContext : DbContext
-	{
+    public class LoggingContext :  IdentityDbContext<ApplicationUser>
+
+    {
 		public LoggingContext(DbContextOptions<LoggingContext> options) 
 			:base(options)
 		{ }

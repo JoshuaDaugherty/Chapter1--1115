@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
 
 namespace Chapter3finalredone.Models.DomainModels
 {
 	public class ApplicationUser : IdentityUser
 	{
-		public ICollection<User>? Users { get; set; }
+        [NotMapped]
+        public IList<string> RoleNames { get; set; }
+
+        public ICollection<User>? Users { get; set; }
 	}
 }
