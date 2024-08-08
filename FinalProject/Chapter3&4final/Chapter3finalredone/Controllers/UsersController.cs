@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using Azure.Identity;
 //using Chapter3finalredone.Data.Services;
-using Chapter3finalredone.Models.ViewModel;
+
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -11,134 +11,135 @@ using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using Chapter3finalredone.Models.DomainModels;
 using Chapter3finalredone.Models.DataLayer;
+using Chapter3finalredone.Models.ViewModels;
 
 namespace Chapter3finalredone.Controllers
 {
-    public class UsersController : Controller
-	{
+ //   public class UsersController : Controller
+	//{
 		
 
 
-		private readonly LoggingContext _context;
+	//	private readonly LoggingContext _context;
 
-		public UsersController(LoggingContext ctx)
-		{
-			_context = ctx;
+	//	public UsersController(LoggingContext ctx)
+	//	{
+	//		_context = ctx;
 			
-		}
+	//	}
 
-		[HttpGet]
+	//	[HttpGet]
 
-		public IActionResult Delete(int id)
-		{
-			var user = _context.Users.Find(id);
-				return View(user);
-		}
+	//	public IActionResult Delete(int id)
+	//	{
+	//		var user = _context.Users.Find(id);
+	//			return View(user);
+	//	}
 
-		[HttpPost]
-		public IActionResult Delete(User user)
-		{
-			_context.Users.Remove(user);
-			_context.SaveChanges();
-			TempData["AlertMessage"] = "User Deleted Successfully";
-			return RedirectToAction("Index", "Users");
-		}
+	//	[HttpPost]
+	//	public IActionResult Delete(User user)
+	//	{
+	//		_context.Users.Remove(user);
+	//		_context.SaveChanges();
+	//		TempData["AlertMessage"] = "User Deleted Successfully";
+	//		return RedirectToAction("Index", "Users");
+	//	}
 
 
-		[HttpGet]
-		public IActionResult Add()
-		{
+	//	[HttpGet]
+	//	public IActionResult Add()
+	//	{
 			
-			ViewBag.Action = "Add";
-			return View("Edit", new User());
-		}
-		[HttpGet]
-		public IActionResult Edit(int id)
-		{
-            var user = _context.Users.Find(id);
-            ViewBag.Action = "Edit";
+	//		ViewBag.Action = "Add";
+	//		return View("Edit", new User());
+	//	}
+	//	[HttpGet]
+	//	public IActionResult Edit(int id)
+	//	{
+ //           var user = _context.Users.Find(id);
+ //           ViewBag.Action = "Edit";
 			
-			return View("Edit", user);
-		}
+	//		return View("Edit", user);
+	//	}
 
-		[HttpPost]
-		public IActionResult Edit(User user)
-		{
-			if (ModelState.IsValid)
-			{
-				if(user.UserId == 0)
-				{
-					_context.Users.Add(user);
-				}
-				else
-				{
-					_context.Users.Update(user);
-				}
-				_context.SaveChanges();
-                TempData["AlertMessage"] = "User Added/Updated Successfully";
-                return RedirectToAction("Index", "Users");
+	//	[HttpPost]
+	//	public IActionResult Edit(User user)
+	//	{
+	//		if (ModelState.IsValid)
+	//		{
+	//			if(user.UserId == 0)
+	//			{
+	//				_context.Users.Add(user);
+	//			}
+	//			else
+	//			{
+	//				_context.Users.Update(user);
+	//			}
+	//			_context.SaveChanges();
+ //               TempData["AlertMessage"] = "User Added/Updated Successfully";
+ //               return RedirectToAction("Index", "Users");
 				
-			}
+	//		}
 			
-				return View(user);
+	//			return View(user);
 			
-		}
+	//	}
 
-		public async Task<IActionResult> Index(int? pageNumber, string searchString)
-		{
-			//var applicationDbContext = _UserService.GetAll();
-			int pageSize = 3;
-			var users = _context.Users.OrderBy(m => m.UserName).AsNoTracking();
+	//	public async Task<IActionResult> Index(int? pageNumber, string searchString)
+	//	{
+	//		//var applicationDbContext = _UserService.GetAll();
+	//		int pageSize = 3;
+	//		var users = _context.Users.OrderBy(m => m.UserName).AsNoTracking();
 
-            if (!string.IsNullOrEmpty(searchString))
-            {
-                users = users.Where(u => u.UserName.Contains(searchString));
-            }
+ //           if (!string.IsNullOrEmpty(searchString))
+ //           {
+ //               users = users.Where(u => u.UserName.Contains(searchString));
+ //           }
 
-            return View(await PaginatedList<User>.CreateAsync(users, pageNumber ?? 1, pageSize));
-        }
-
-
-
-		//public IActionResult ViewUserLogs()
-		//{
-		//	var users = _context.Users.ToList();	
-		//	UserWorkoutLogsViewModel userWorkoutLogsViewModel = new UserWorkoutLogsViewModel();
-
-		//	foreach (var user in users)
-		//	{
-		//		userWorkoutLogsViewModel.users.Add(new Models.User
-		//		{
-		//			UserId = user.UserId,
-		//			UserName = user.UserName,
-		//			Email = user.Email,
-		//			Reason = user.Reason,
-		//		});
-		//	}
+ //           return View(await PaginatedList<User>.CreateAsync(users, pageNumber ?? 1, pageSize));
+ //       }
 
 
-		//	return View(userWorkoutLogsViewModel);
-		//}
 
-		public IActionResult Details(int id)
-		{
-			var user = _context.Users.Find(id);
-			var workouts = _context.Workouts.Where(w => w.UserId == id).ToList();
-			UserWorkoutViewModel userWorkoutViewModel = new UserWorkoutViewModel
-			{
-				User = new User
-				{
-					UserId = user.UserId,
-					UserName = user.UserName,
-					Email = user.Email,
-					Reason = user.Reason,
-				}
+	//	//public IActionResult ViewUserLogs()
+	//	//{
+	//	//	var users = _context.Users.ToList();	
+	//	//	UserWorkoutLogsViewModel userWorkoutLogsViewModel = new UserWorkoutLogsViewModel();
 
-			};
-			userWorkoutViewModel.Workouts.AddRange(workouts);
-			return View(userWorkoutViewModel);
-		}
-	}
+	//	//	foreach (var user in users)
+	//	//	{
+	//	//		userWorkoutLogsViewModel.users.Add(new Models.User
+	//	//		{
+	//	//			UserId = user.UserId,
+	//	//			UserName = user.UserName,
+	//	//			Email = user.Email,
+	//	//			Reason = user.Reason,
+	//	//		});
+	//	//	}
+
+
+	//	//	return View(userWorkoutLogsViewModel);
+	//	//}
+
+	//	public IActionResult Details(int id)
+	//	{
+	//		var user = _context.Users.Find(id);
+	//		var workouts = _context.Workouts.Where(w => w.UserId == id).ToList();
+	//		UserWorkoutViewModel userWorkoutViewModel = new UserWorkoutViewModel
+	//		{
+	//			User = new User
+	//			{
+	//				UserId = user.UserId,
+	//				UserName = user.UserName,
+	//				Email = user.Email,
+	//				Reason = user.Reason,
+	//			}
+
+	//		};
+	//		userWorkoutViewModel.Workouts.AddRange(workouts);
+	//		return View(userWorkoutViewModel);
+	//	}
+	//}
 
 
 }

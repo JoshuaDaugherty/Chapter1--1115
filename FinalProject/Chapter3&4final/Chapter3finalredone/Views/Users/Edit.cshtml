@@ -1,4 +1,4 @@
-﻿@model User
+﻿@* @model User
 @{
 	ViewBag.Title = $"{ViewBag.Action}";
 }
@@ -22,7 +22,7 @@
 		<label asp-for="Reason" class="form-label"></label>
 		<input asp-for="Reason" class="form-control" />
 	</div>
-	@* <input type="hidden" asp-for="UserId" /> *@
+	@* <input type="hidden" asp-for="UserId" /> 
 	<button type="submit" class="btn">Save</button>
 	<a asp-controller="Users"asp-action="Index" class="btn btn-secondary">Cancel</a>
-</form>
+</form> *@

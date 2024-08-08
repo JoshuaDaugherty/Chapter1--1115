@@ -12,12 +12,12 @@ namespace Chapter3finalredone.Models.ViewModels
         [Required(ErrorMessage = "Please enter a passwork")]
         [DataType(DataType.Password)]
         [Compare("ConfirmPassword")]
-        public string PassWord { get; set; } = null!;
+        public string Password { get; set; } = null!;
 
-        [Required(ErrorMessage = "Please confirm your passwork")]
+        [Required(ErrorMessage = "Please confirm your password")]
         [DataType(DataType.Password)]
         [Display(Name = "Confirm Password")]
-        public string ConfirmPassWord { get; set; } = null!;
+        public string ConfirmPassword { get; set; } = null!;
 
 
     }

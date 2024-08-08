@@ -7,7 +7,7 @@ namespace Chapter3finalredone.Models.DomainModels
 	{
         [NotMapped]
         public IList<string> RoleNames { get; set; }
-
-        public ICollection<User>? Users { get; set; }
-	}
+        public String? Reason { get; set; } = String.Empty!;
+        //public ICollection<User>? Users { get; set; }
+    }
 }

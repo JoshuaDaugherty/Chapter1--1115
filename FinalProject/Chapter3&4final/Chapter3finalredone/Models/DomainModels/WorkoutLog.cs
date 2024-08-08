@@ -8,13 +8,13 @@ namespace Chapter3finalredone.Models.DomainModels
 
         public DateOnly Date { get; set; }
 
-        public int UserId { get; set; } //FK
+        public string UserId { get; set; } //FK
         [ValidateNever]
-        public User? User { get; set; } // navigation property
+        public ApplicationUser? User { get; set; } // navigation property
 
         public string Notes { get; set; } = string.Empty;
 
-        public ICollection<User> Users { get; set; }//A user can have many workout logs
+        public ICollection<ApplicationUser> Users { get; set; }//A user can have many workout logs
 
         public ICollection<WorkoutLogExercise> WorkoutLogExercises { get; set; } //A workout log can have many exercises
     }
