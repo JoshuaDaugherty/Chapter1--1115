@@ -1,4 +1,5 @@
 using Chapter3finalredone.Models;
+using Chapter3finalredone.Models.Configuration;
 using Chapter3finalredone.Models.DataLayer;
 using Chapter3finalredone.Models.DomainModels;
 using Microsoft.AspNetCore.Identity;
@@ -44,6 +45,12 @@ app.UseRouting();
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+var scopeFactory = app.Services.GetRequiredService<IServiceScopeFactory>();
+using (var scope = scopeFactory.CreateScope())
+{
+	await ConfigureIdentity.CreateAdminUserAsync(scope.ServiceProvider);
+}
 
 app.UseAuthorization();
 

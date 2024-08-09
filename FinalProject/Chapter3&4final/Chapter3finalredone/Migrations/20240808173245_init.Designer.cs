@@ -4,6 +4,7 @@ using Chapter3finalredone.Models.DataLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Chapter3finalredone.Migrations
 {
     [DbContext(typeof(LoggingContext))]
-    partial class LoggingContextModelSnapshot : ModelSnapshot
+    [Migration("20240808173245_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,13 +102,13 @@ namespace Chapter3finalredone.Migrations
                         {
                             Id = "1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7771b67e-bedb-45c7-8474-46e653d45b17",
+                            ConcurrencyStamp = "36472483-93b4-4a0a-befd-4d8c36b18c18",
                             Email = "killerclutch@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
                             Reason = "Lose weight.",
-                            SecurityStamp = "71bb4cc7-866b-4a0a-81cb-cfe63e692f57",
+                            SecurityStamp = "bbf7a5ca-7b63-4142-bf5e-a7652d6888d3",
                             TwoFactorEnabled = false,
                             UserName = "Joshua555"
                         },
@@ -113,13 +116,13 @@ namespace Chapter3finalredone.Migrations
                         {
                             Id = "2",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2da23c92-b61b-4b1d-b612-c5a5653a7bf6",
+                            ConcurrencyStamp = "7609304b-2084-4eb0-baf2-4ed6cbfc7164",
                             Email = "Random616@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
                             Reason = "Gain weight.",
-                            SecurityStamp = "761f8678-b33d-492f-a9e3-775c7a432d20",
+                            SecurityStamp = "233541a8-a975-4e30-89b3-31b3ce5cd134",
                             TwoFactorEnabled = false,
                             UserName = "Random616"
                         },
@@ -127,13 +130,13 @@ namespace Chapter3finalredone.Migrations
                         {
                             Id = "3",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "8e48f6d7-87e7-4605-963a-c70629304ba9",
+                            ConcurrencyStamp = "1f76ed2c-4cc0-4af2-a58a-96ab14543721",
                             Email = "CoolBeans83@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
                             Reason = "I want to jump higher.",
-                            SecurityStamp = "b64a988a-513e-4859-a160-be8b32ef00ea",
+                            SecurityStamp = "6530982a-de70-4a2a-9b56-db14615032e1",
                             TwoFactorEnabled = false,
                             UserName = "CoolBeans83"
                         },
@@ -141,13 +144,13 @@ namespace Chapter3finalredone.Migrations
                         {
                             Id = "4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "5ccb2d44-8c7a-4ff5-8bdf-f568115e049c",
+                            ConcurrencyStamp = "b04ba9c0-4256-4f9f-a182-89d86cac9abd",
                             Email = "Fitnessguy454@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
                             Reason = "I want to fill out shirts.",
-                            SecurityStamp = "58ebca9e-b7a7-4191-a46c-3dac0e670d13",
+                            SecurityStamp = "4e379cef-9781-4a25-a303-e3840d14bd55",
                             TwoFactorEnabled = false,
                             UserName = "Fitnessguy454"
                         });

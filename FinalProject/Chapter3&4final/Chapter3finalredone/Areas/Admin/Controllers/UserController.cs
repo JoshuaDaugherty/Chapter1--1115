@@ -9,12 +9,12 @@ namespace Chapter3finalredone.Areas.Admin.Controllers
 	[Authorize(Roles = "Admin")]
 	[Authorize]
 	[Area("Admin")]
-	public class ApplicationUserController : Controller
+	public class UserController : Controller
 	{
 		private UserManager<ApplicationUser> userManager;
 		private RoleManager<IdentityRole> roleManager;
 
-		public ApplicationUserController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
+		public UserController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
 		{
 			this.userManager = userManager;
 			this.roleManager = roleManager;
@@ -57,7 +57,7 @@ namespace Chapter3finalredone.Areas.Admin.Controllers
 		[HttpPost]
 		public async Task<IActionResult> AddToAdmin(string id)
 		{
-			IdentityRole adminRole = await roleManager.FindByIdAsync("Admin");
+			IdentityRole adminRole = await roleManager.FindByNameAsync("Admin");
 			if(adminRole == null)
 			{
 				TempData["message"] = "Admin role doesn't exist,Click create Admin Role to create role";

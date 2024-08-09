@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Chapter3finalredone.Migrations
 {
     [DbContext(typeof(LoggingContext))]
-    [Migration("20240807153718_AddIdentityTables")]
-    partial class AddIdentityTables
+    [Migration("20240809163146_adminrole")]
+    partial class adminrole
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -67,6 +67,9 @@ namespace Chapter3finalredone.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
+                    b.Property<string>("Reason")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");
 
@@ -76,6 +79,9 @@ namespace Chapter3finalredone.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
+
+                    b.Property<int?>("WorkoutLogId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -87,7 +93,67 @@ namespace Chapter3finalredone.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
+                    b.HasIndex("WorkoutLogId");
+
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "1",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "7771b67e-bedb-45c7-8474-46e653d45b17",
+                            Email = "killerclutch@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            Reason = "Lose weight.",
+                            SecurityStamp = "71bb4cc7-866b-4a0a-81cb-cfe63e692f57",
+                            TwoFactorEnabled = false,
+                            UserName = "Joshua555"
+                        },
+                        new
+                        {
+                            Id = "2",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "2da23c92-b61b-4b1d-b612-c5a5653a7bf6",
+                            Email = "Random616@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            Reason = "Gain weight.",
+                            SecurityStamp = "761f8678-b33d-492f-a9e3-775c7a432d20",
+                            TwoFactorEnabled = false,
+                            UserName = "Random616"
+                        },
+                        new
+                        {
+                            Id = "3",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "8e48f6d7-87e7-4605-963a-c70629304ba9",
+                            Email = "CoolBeans83@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            Reason = "I want to jump higher.",
+                            SecurityStamp = "b64a988a-513e-4859-a160-be8b32ef00ea",
+                            TwoFactorEnabled = false,
+                            UserName = "CoolBeans83"
+                        },
+                        new
+                        {
+                            Id = "4",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "5ccb2d44-8c7a-4ff5-8bdf-f568115e049c",
+                            Email = "Fitnessguy454@gmail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            PhoneNumberConfirmed = false,
+                            Reason = "I want to fill out shirts.",
+                            SecurityStamp = "58ebca9e-b7a7-4191-a46c-3dac0e670d13",
+                            TwoFactorEnabled = false,
+                            UserName = "Fitnessguy454"
+                        });
                 });
 
             modelBuilder.Entity("Chapter3finalredone.Models.DomainModels.Exercise", b =>
@@ -137,71 +203,6 @@ namespace Chapter3finalredone.Migrations
                         });
                 });
 
-            modelBuilder.Entity("Chapter3finalredone.Models.DomainModels.User", b =>
-                {
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"));
-
-                    b.Property<string>("ApplicationUserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Reason")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("WorkoutLogId")
-                        .HasColumnType("int");
-
-                    b.HasKey("UserId");
-
-                    b.HasIndex("ApplicationUserId");
-
-                    b.HasIndex("WorkoutLogId");
-
-                    b.ToTable("Users");
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = 1,
-                            Email = "killerclutch@gmail.com",
-                            Reason = "Lose weight.",
-                            UserName = "Joshua555"
-                        },
-                        new
-                        {
-                            UserId = 2,
-                            Email = "Random616@gmail.com",
-                            Reason = "Gain weight.",
-                            UserName = "Random616"
-                        },
-                        new
-                        {
-                            UserId = 3,
-                            Email = "CoolBeans83@gmail.com",
-                            Reason = "I want to jump higher.",
-                            UserName = "CoolBeans83"
-                        },
-                        new
-                        {
-                            UserId = 4,
-                            Email = "Fitnessguy454@gmail.com",
-                            Reason = "I want to fill out shirts.",
-                            UserName = "Fitnessguy454"
-                        });
-                });
-
             modelBuilder.Entity("Chapter3finalredone.Models.DomainModels.WorkoutLog", b =>
                 {
                     b.Property<int>("WorkoutLogId")
@@ -217,8 +218,9 @@ namespace Chapter3finalredone.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("WorkoutLogId");
 
@@ -232,28 +234,28 @@ namespace Chapter3finalredone.Migrations
                             WorkoutLogId = 1,
                             Date = new DateOnly(2021, 10, 1),
                             Notes = "I struggled with leg day.",
-                            UserId = 1
+                            UserId = "1"
                         },
                         new
                         {
                             WorkoutLogId = 2,
                             Date = new DateOnly(2021, 10, 2),
                             Notes = "I did good on squats.",
-                            UserId = 2
+                            UserId = "2"
                         },
                         new
                         {
                             WorkoutLogId = 3,
                             Date = new DateOnly(2021, 10, 1),
                             Notes = "My form on front rows needs improvement.",
-                            UserId = 2
+                            UserId = "2"
                         },
                         new
                         {
                             WorkoutLogId = 4,
                             Date = new DateOnly(2021, 10, 2),
                             Notes = "I felt really motivated today.",
-                            UserId = 3
+                            UserId = "3"
                         });
                 });
 
@@ -447,12 +449,8 @@ namespace Chapter3finalredone.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("Chapter3finalredone.Models.DomainModels.User", b =>
+            modelBuilder.Entity("Chapter3finalredone.Models.DomainModels.ApplicationUser", b =>
                 {
-                    b.HasOne("Chapter3finalredone.Models.DomainModels.ApplicationUser", null)
-                        .WithMany("Users")
-                        .HasForeignKey("ApplicationUserId");
-
                     b.HasOne("Chapter3finalredone.Models.DomainModels.WorkoutLog", null)
                         .WithMany("Users")
                         .HasForeignKey("WorkoutLogId");
@@ -460,7 +458,7 @@ namespace Chapter3finalredone.Migrations
 
             modelBuilder.Entity("Chapter3finalredone.Models.DomainModels.WorkoutLog", b =>
                 {
-                    b.HasOne("Chapter3finalredone.Models.DomainModels.User", "User")
+                    b.HasOne("Chapter3finalredone.Models.DomainModels.ApplicationUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -537,11 +535,6 @@ namespace Chapter3finalredone.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("Chapter3finalredone.Models.DomainModels.ApplicationUser", b =>
-                {
-                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("Chapter3finalredone.Models.DomainModels.Exercise", b =>
