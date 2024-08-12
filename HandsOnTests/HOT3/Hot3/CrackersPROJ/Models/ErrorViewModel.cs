@@ -1,4 +1,4 @@
-namespace CrackersPROJ.Models
+namespace CrackersPROJ.Models.DomainModels
 {
     public class ErrorViewModel
     {

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace CrackersPROJ.Models
+namespace CrackersPROJ.Models.DataLayer
 {
     public static class SessionExtensions
     {
@@ -12,7 +12,7 @@ namespace CrackersPROJ.Models
         public static T Get<T>(this ISession session, string key)
         {
             var value = session.GetString(key);
-            return value == null ? default(T) : JsonSerializer.Deserialize<T>(value);
+            return value == null ? default : JsonSerializer.Deserialize<T>(value);
         }
     }
 }

@@ -1,11 +1,14 @@
-﻿using CrackersPROJ.Models;
+﻿using CrackersPROJ.Models.DataLayer;
+using CrackersPROJ.Models.DomainModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace CrackersPROJ.Areas.Admin.Controllers
 {
-	[Area("Admin")]
-	
+    [Area("Admin")]
+	[Authorize(Roles = "Admin")]
+	[Authorize]
 	public class CrackerController : Controller
 	{
 		CrackerContext _ctx;

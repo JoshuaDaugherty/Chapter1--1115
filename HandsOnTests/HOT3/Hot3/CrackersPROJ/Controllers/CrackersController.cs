@@ -1,10 +1,13 @@
-﻿using CrackersPROJ.Models;
+﻿using CrackersPROJ.Models.DataLayer;
+using CrackersPROJ.Models.DomainModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace CrackersPROJ.Controllers
 {
-	public class CrackersController : Controller
+    
+    public class CrackersController : Controller
 	{
 		CrackerContext _ctx;
 		public CrackersController(CrackerContext ctx)

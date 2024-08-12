@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CrackersPROJ")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6e3c49cce618b708c4a5bfc33318bf52a5d535fc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+64b4fe4ec5db0f21cef398b8dae13f16e9d6b818")]
 [assembly: System.Reflection.AssemblyProductAttribute("CrackersPROJ")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CrackersPROJ")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

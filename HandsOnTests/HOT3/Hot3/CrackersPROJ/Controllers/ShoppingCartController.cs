@@ -1,10 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CrackersPROJ.Models;
 using Microsoft.AspNetCore.Http;
+using CrackersPROJ.Models.DataLayer;
+using CrackersPROJ.Models.DomainModels;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CrackersPROJ.Controllers
 {
-	public class ShoppingCartController : Controller
+   
+    [Authorize]
+    public class ShoppingCartController : Controller
 	{
 		private readonly CrackerContext _context;
 		private List<ShoppingCartItem> _cartItems;

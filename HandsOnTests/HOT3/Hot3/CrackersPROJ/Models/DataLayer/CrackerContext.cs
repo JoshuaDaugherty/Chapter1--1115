@@ -1,8 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using CrackersPROJ.Models.DomainModels;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
-namespace CrackersPROJ.Models
+namespace CrackersPROJ.Models.DataLayer
 {
-    public class CrackerContext : DbContext
+    public class CrackerContext : IdentityDbContext<User>
     {
         public CrackerContext(DbContextOptions<CrackerContext> options)
                     : base(options)
@@ -10,11 +12,13 @@ namespace CrackersPROJ.Models
         }
 
         public DbSet<Crackers> Crackers { get; set; }
-		public DbSet<Purchase> Purchases { get; set; }
+        public DbSet<Purchase> Purchases { get; set; }
 
 
-		protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Crackers>().HasData(
                 new Crackers { CrackersId = 1, Invented = "1933", Calories = 20, Price = "$2.00", Name = "Graham Crackers", ImageFileName = "grahamCrackers.jpg" },
                 new Crackers { CrackersId = 2, Invented = "1945", Calories = 25, Price = "$2.50", Name = "Ritz", ImageFileName = "Ritz.jpg" },

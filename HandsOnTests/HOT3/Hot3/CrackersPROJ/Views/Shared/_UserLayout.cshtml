@@ -1,6 +1,10 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Identity
+@using CrackersPROJ.Models.DomainModels
+@inject SignInManager<User> signInManager
+@{
 	Layout = "_Layout.cshtml";
 }
+
 
 <header>
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -19,6 +23,37 @@
                 </ul>
 				<div class="d-flex">
                     <ul class="navbar-nav">
+
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                            <li class="nav-item">
+                                <a asp-action="ChangePassword" asp-controller="Account"
+                                asp-area="">Change Password</a>
+                            </li>
+                            <li class="nav-item">
+                                <form method="post" asp-action="Logout" asp-controller="Account" asp-area="">
+                                    <input type="submit" value="Log Out" class="btn btn-outline-dark" />
+                                    <span class="text-dark">@User.Identity.Name</span>
+                                </form>
+                            </li>
+                        }
+                        else
+                        {
+                            //get current action
+                            var action = ViewContext.RouteData.Values["action"]?.ToString();
+
+                            //anonymouse user
+                            <li class="nav-item @Nav.Active("Register", action)">
+                                <a asp-action="Register" asp-controller="Account"
+                                   asp-area="" class="nav-link">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a asp-action="Login" asp-controller="Account"
+                                   asp-area="" class="btn btn-outline-dark">Log in</a>
+                            </li>
+                        }
+
+
                     <li class="nav-item active">
                         <a class="nav-link text-dark " asp-area="Admin" asp-controller="Home" asp-action="Index">Admin</a>
                     </li>

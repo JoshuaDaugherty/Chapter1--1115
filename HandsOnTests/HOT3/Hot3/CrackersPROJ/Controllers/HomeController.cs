@@ -1,10 +1,13 @@
 using System.Diagnostics;
-using CrackersPROJ.Models;
+using CrackersPROJ.Models.DataLayer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace CrackersPROJ.Controllers
 {
+   
+    
     public class HomeController : Controller
     {
          CrackerContext _ctx;
